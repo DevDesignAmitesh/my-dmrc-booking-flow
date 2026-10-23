@@ -1,0 +1,24 @@
+{
+  "name": "bap",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch --env-file-if-exists=.env --env-file-if-exists=.env.keys src/server.ts",
+    "keys": "tsx scripts/generate-keys.ts",
+    "subscribe": "tsx --env-file-if-exists=.env --env-file-if-exists=.env.keys scripts/subscribe.ts",
+    "check:signing": "tsx --env-file-if-exists=.env --env-file-if-exists=.env.keys scripts/check-signing.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "libsodium-wrappers": "0.7.15",
+    "ondc-crypto-sdk-nodejs": "2.1.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/libsodium-wrappers": "0.7.14",
+    "@types/node": "^22.15.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  }
+}

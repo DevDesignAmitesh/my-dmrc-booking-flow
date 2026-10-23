@@ -1,0 +1,295 @@
+:root {
+  --bg: #f6f7f9;
+  --card: #ffffff;
+  --text: #1b1f24;
+  --muted: #5f6b7a;
+  --border: #dde2e8;
+  --accent: #6b2fa3; /* DMRC-ish violet line */
+  --accent-text: #ffffff;
+  --out: #1f6feb;
+  --in: #1a7f37;
+  --error: #c62828;
+  --code-bg: #f0f2f5;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1216;
+    --card: #171b21;
+    --text: #e6e9ee;
+    --muted: #94a0b0;
+    --border: #2a313b;
+    --accent: #a77bdb;
+    --accent-text: #0f1216;
+    --out: #6aa8ff;
+    --in: #56d37a;
+    --error: #ff7a7a;
+    --code-bg: #0f1216;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 22px;
+}
+h2 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.muted {
+  color: var(--muted);
+}
+.small {
+  font-size: 13px;
+}
+.mono {
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  word-break: break-all;
+}
+.error {
+  color: var(--error);
+}
+.waiting {
+  color: var(--accent);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  margin: 0 0 16px;
+  list-style: none;
+}
+.steps li {
+  font-size: 12px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+.steps li.done {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+fieldset {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin: 0 0 12px;
+  padding: 10px 12px 12px;
+}
+legend {
+  font-weight: 600;
+  font-size: 13px;
+  padding: 0 4px;
+}
+fieldset p {
+  margin: 4px 0 8px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+select,
+input,
+button {
+  font: inherit;
+  color: inherit;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+input[type="number"] {
+  width: 70px;
+}
+button {
+  cursor: pointer;
+}
+button:disabled,
+fieldset:disabled button {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+
+.terms {
+  margin: 0 0 10px;
+  padding-left: 18px;
+}
+
+.qr {
+  display: inline-block;
+  padding: 12px;
+  background: #ffffff; /* QR needs a light background to scan */
+  border-radius: 8px;
+}
+
+.log-card {
+  min-height: 300px;
+}
+.log {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.log li {
+  border-top: 1px solid var(--border);
+}
+.log-row {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 6px 2px;
+  text-align: left;
+}
+.log-row:disabled {
+  cursor: default;
+  opacity: 1;
+}
+.log .out .arrow,
+.log .out .action {
+  color: var(--out);
+}
+.log .in .arrow,
+.log .in .action {
+  color: var(--in);
+}
+.log .action {
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  font-weight: 600;
+}
+.log .note {
+  color: var(--muted);
+  font-size: 13px;
+  flex: 1;
+}
+.log .time {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.log pre {
+  margin: 0 0 8px;
+  padding: 10px;
+  max-height: 320px;
+  overflow: auto;
+  background: var(--code-bg);
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.sellers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 4px 0 8px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.chip input {
+  margin: 0;
+}
+.chip.on {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.row.center {
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.tickets-wrap {
+  text-align: center;
+}
+.tickets {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 12px;
+  margin-top: 8px;
+}
+.ticket {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 8px 4px;
+}
+.ticket p {
+  margin: 4px 0;
+}
+
+.sig {
+  font-size: 11px;
+  padding: 0 6px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+}
+.sig.verified {
+  color: var(--in);
+}
+.sig.failed {
+  color: var(--error);
+}
+.sig.skipped {
+  color: var(--muted);
+}

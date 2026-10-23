@@ -1,0 +1,21 @@
+{
+  "name": "bpp-mock",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "libsodium-wrappers": "0.7.15",
+    "ondc-crypto-sdk-nodejs": "2.1.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/libsodium-wrappers": "0.7.14",
+    "@types/node": "^22.15.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  }
+}

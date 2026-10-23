@@ -1,0 +1,6 @@
+node_modules
+dist
+.env
+.env.keys
+bpp-mock/.data
+bap/onboarding/entity.json

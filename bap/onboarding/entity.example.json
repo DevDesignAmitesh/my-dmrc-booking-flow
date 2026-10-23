@@ -1,0 +1,17 @@
+{
+  "gst": {
+    "legal_entity_name": "Macro Rides Pvt Ltd (PLACEHOLDER)",
+    "business_address": "Registered address, New Delhi (PLACEHOLDER)",
+    "city_code": ["std:011"],
+    "gst_no": "07AAAAA0000A1Z5"
+  },
+  "pan": {
+    "name_as_per_pan": "Macro Rides Pvt Ltd (PLACEHOLDER)",
+    "pan_no": "AAAAA0000A",
+    "date_of_incorporation": "01/01/2024"
+  },
+  "name_of_authorised_signatory": "Authorised Signatory (PLACEHOLDER)",
+  "address_of_authorised_signatory": "Address (PLACEHOLDER)",
+  "email_id": "ondc@example.com",
+  "mobile_no": 9999999999
+}

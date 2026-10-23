@@ -1,0 +1,4 @@
+packages:
+  - bap
+  - bpp-mock
+  - web

@@ -1,0 +1,18 @@
+{
+  "name": "mock-dmrc-app",
+  "private": true,
+  "version": "0.1.0",
+  "description": "V1 learning sandbox: ONDC metro (TRV11) buyer app talking to a mock DMRC seller",
+  "scripts": {
+    "dev": "pnpm -r --parallel run dev",
+    "typecheck": "pnpm -r run typecheck",
+    "keys": "pnpm --filter bap run keys",
+    "subscribe": "pnpm --filter bap run subscribe",
+    "check:signing": "pnpm --filter bap run check:signing"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}
